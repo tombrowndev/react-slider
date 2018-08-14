@@ -1,0 +1,53 @@
+.card-slider {
+  text-align: center;
+  width: 310px;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 690px) {
+  .card-slider.show-2-cards, .card-slider.show-3-cards  {
+    width: 645px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .card-slider.show-3-cards  {
+    width: 978px;
+  }
+}
+
+/* Fixes shadow overflowing */
+.slick-list {
+  padding-left: 1px;
+}
+
+.slick-slide {
+  margin-right: 26px;
+}
+
+.slick-slide[aria-hidden="false"] {
+  outline: 0;
+}
+
+.slider-controls {
+  padding-top: 26px;
+}
+
+.slider-controls .fa-angle-left {
+  width: 12px;
+  fill: #2a8631;
+  margin: 8px;
+}
+
+.slider-controls .control {
+  display: inline;
+  cursor: pointer;
+}
+
+.slider-controls .control:focus {
+  outline: none;
+}
+
+.slider-controls #nextButton .fa-angle-left {
+  transform: rotate(180deg);
+}

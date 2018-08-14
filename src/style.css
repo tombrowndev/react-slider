@@ -1,0 +1,18 @@
+body {
+  margin: 26px;
+  padding: 0px;
+  background-color: #F6F6F6;
+}
+
+h1, h2,h3,p {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+p {
+  margin-bottom: 19px;
+}
+
+h1.site-title {
+  margin-bottom: 26px;
+}
