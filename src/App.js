@@ -7,6 +7,9 @@ import Card from './components/Card';
 // Import styles
 import './style.css';
 
+// Import cardData
+
+
 // App Component
 class App extends Component {
   constructor(state) {
@@ -57,13 +60,14 @@ class App extends Component {
 
       return (
         <React.Fragment>
-            <h2 className="section-title">Slider</h2>
+            <h2 className="section-title">Slider</h2><br />
           {
-            (cardData.length > 0) &&
+            (typeof cardData !== 'undefined') && (cardData.length > 0) &&
             <CardSlider cards={cardData} toggleLike={this.toggleLike} cardsToShow={cardsToShow} />
           }
             <h2 className="section-title">Single Card</h2><br />
-          { (cardData.length > 0) &&
+          {
+            (typeof cardData !== 'undefined') && (cardData.length > 0) &&
           <Card key={0} data={cardData[0]} handleLike={this.toggleLike} />
           }
         </React.Fragment>
