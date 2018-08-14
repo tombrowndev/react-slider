@@ -27,7 +27,7 @@ class App extends Component {
    * Once the component mounted, request the card data and update our state
    */
   componentDidMount() {
-      fetch('http://192.168.1.79:3001/cards')
+      fetch('http://localhost:3001/cards')
         .then(response => {
           if (!response.ok) {
             throw Error(response.statusText);
