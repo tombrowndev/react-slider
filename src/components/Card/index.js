@@ -3,9 +3,23 @@ import PropTypes from 'prop-types';
 import ReactHtmlParser from 'react-html-parser';
 import InlineSVG from 'svg-inline-react';
 
-// Styling
+// Styling / CSS
 import './style.css';
 
+/**
+ * Will display a card.
+ * Required Props:
+ * - {number} Key
+ * - {object} data The data rendered in the card. Properties of the object must be...
+ *        - {number} id
+          - {string} title
+          - {string} subtitle (not required)
+          - {string} text
+          - {url} image_url
+          - {link} href
+          - {bool} is_liked
+ * - {number} cardsToShow A number of cards to be visible between 1 - 3.
+ */
 class Card extends Component {
   constructor(state) {
     super(state);
@@ -16,27 +30,42 @@ class Card extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  /**
+   * Handles the click event and passed the card id to the parent
+   */
   handleClick(e) {
     e.preventDefault();
     const {data, handleLike} = this.props;
     handleLike(data.id);
   }
 
+  /**
+   * Required for accessability.
+   * Allows spacebar to be used to toggle the like heart
+   */
   handleKeyDown(e) {
     if(e.keyCode === 32 || e.keyCode === 13) {
       e.target.click();
     }
   }
 
+  /**
+   *  Returns the filled heart SVG
+   */
   getHeartSvg() {
     return this.heartSvg;
   }
 
+  /**
+   *  Returns the empty heart SVG
+   */
   getHeartEmptySvg() {
     return this.heartEmptySvg;
   }
 
-  // Render the component (duh?)
+  /**
+   * Render the component
+   */
   render() {
     const {id, title, subtitle, text, image_url, href, is_liked} = this.props.data;
 
@@ -70,6 +99,9 @@ class Card extends Component {
   }
 }
 
+/**
+ * Type check the props
+ */
 Card.propTypes = {
   handleLike: PropTypes.func.isRequired,
   data: PropTypes.shape({

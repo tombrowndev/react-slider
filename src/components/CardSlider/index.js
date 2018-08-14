@@ -3,16 +3,22 @@ import PropTypes from 'prop-types';
 import Slider from "react-slick";
 import InlineSVG from 'svg-inline-react';
 
-// Import Componenets
+// Componenets
 import Card from './../Card';
 
-// Styling
+// Styling / CSS
 import './style.css';
 
-// Config
+// Configuration
 import { sliderSettings } from './config';
 
-// App Component
+/**
+ * Will display a slick slider of card components.
+ * Required Props:
+ * - {array} Cards An array of card object data.
+ * - {function} toggleLike A funciton to hangle the heart click event.
+ * - {number} cardsToShow A number of cards to be visible between 1 - 3.
+ */
 class CardSlider extends Component {
   constructor(state) {
     super(state);
@@ -24,26 +30,38 @@ class CardSlider extends Component {
     this.previousSlide = this.previousSlide.bind(this);
   }
 
-  // Hook to move the slider to next
+  /**
+   *  Moves the slider to next card.
+   */
   nextSlide() {
     this.slider.slickNext();
     window.slider = this.slider;
   }
 
-  // Hook to move the slider to previous
+  /**
+   *  Moves the slider to previous card.
+   */
   previousSlide() {
     this.slider.slickPrev();
   }
 
+  /**
+   *  Returns the arrow button SVG
+   */
   getArrowSvg() {
     return this.arrowSvg;
   }
 
+  /**
+   * Passes the id of the heart's card that was clicked between the Card component and a parent
+   */
   passLikeToApp(id) {
     this.props.toggleLike(id);
   }
 
-  // Render the component (duh?)
+  /**
+   * Render the component
+   */
   render() {
     const { cards, cardsToShow } = this.props;
 
@@ -67,6 +85,9 @@ class CardSlider extends Component {
   }
 }
 
+/**
+ * Type check the props
+ */
 CardSlider.propTypes = {
   cards: PropTypes.array.isRequired,
   cardsToShow: PropTypes.number.isRequired,

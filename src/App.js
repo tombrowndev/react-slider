@@ -1,31 +1,33 @@
 import React, { Component } from 'react';
 
-// Import Componenets
+// Componenets
 import CardSlider from './components/CardSlider';
 import Card from './components/Card';
 
-// Import styles
+// Styling / CSS
 import './style.css';
 
-// Import cardData
-
-
-// App Component
+/**
+ * The main component for our App
+ */
 class App extends Component {
   constructor(state) {
     super(state);
 
+    // Initial state
     this.state = {
       cardData: [],
       cardsToShow: 3
-    }
+    };
 
     this.toggleLike = this.toggleLike.bind(this);
   }
 
-  // Once the component mounted, request the card data
+  /**
+   * Once the component mounted, request the card data and update our state
+   */
   componentDidMount() {
-      fetch('http://localhost:3001/cards')
+      fetch('http://192.168.1.79:3001/cards')
         .then(response => {
           if (!response.ok) {
             throw Error(response.statusText);
@@ -42,6 +44,9 @@ class App extends Component {
         });
   }
 
+  /**
+    * Toggles the card data. Triggered via the AppSlider component
+    */
   toggleLike(id) {
     const { cardData } = this.state;
 
@@ -54,7 +59,9 @@ class App extends Component {
     this.setState({cardData});
   }
 
-  // Render the component (duh?)
+  /**
+   * Render the component
+   */
   render() {
     const { cardData, cardsToShow } = this.state;
 
