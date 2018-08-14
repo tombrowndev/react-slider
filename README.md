@@ -1,45 +1,6 @@
-#  Mindera Card Slider Challenge
+#  React Card Slider
 
-This challenge goal is to build a component which displays content using the Card design pattern, according to the specs included. This component should show a fixed (configurable) number of cards at a time, and slide for more when the user clicks the arrow buttons.
-
-The component should look like the following mockup:
-
-![mockup](./ui-mockup.png)
-
-Additional specs available in [ui-specs.png](./ui-specs.png).
-
-**Card behaviour:**
-
- - Clicking a card (anywhere) should open the corresponding link (card `href`);
- - A card heart should be filled if the card is liked and unfilled (outline only) if it is not;
- - Clicking a card's heart should like it.
-
-**Assumptions:**
-
- - In order to get dummy data for display in your component, you can use the server provided in this repo;
- - If you find any missing spec on the design attached, use your best judgment to implement it;
- - Proceed the same way if you think there is any missing feature/implementation detail.
-
-**Keep in mind:**
-
- - Bundle size and performance are important. Think twice before adding a dependency you might not need;
- - Unit tests are required;
- - The component(s) should be reusable on different parts of the project / different projects;
- - If transitions are used, make them as smooth as possible.
-
-**Nice to have:**
-
- - Implement the component(s) responsively, in order to function properly and smoothly on mobile devices;
- - Try to keep the size of requests to the minimum;
- - Correctly handle the cases of small sets of data and large sets of data.
-
-**We pay attention to:**
-
- - Code quality and consistency;
- - Naming conventions;
- - Styling;
- - Test quality;
- - Usability, accessibility and performance.
+A simple react component that uses the slick slider to show stylised cards. Set the cards to show (maximum of 3) as a property of the CardSlider Component. Set slick configuration options in the CardSlider config file.
 
 ## Available Scripts
 
