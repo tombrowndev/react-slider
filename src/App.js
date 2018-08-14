@@ -57,19 +57,15 @@ class App extends Component {
 
       return (
         <React.Fragment>
-          <div>
             <h2 className="section-title">Slider</h2>
           {
             (cardData.length > 0) &&
             <CardSlider cards={cardData} toggleLike={this.toggleLike} cardsToShow={cardsToShow} />
           }
-          </div>
-          <div>
             <h2 className="section-title">Single Card</h2><br />
           { (cardData.length > 0) &&
           <Card key={0} data={cardData[0]} handleLike={this.toggleLike} />
           }
-          </div>
         </React.Fragment>
       );
 
