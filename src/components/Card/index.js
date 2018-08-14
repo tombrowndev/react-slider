@@ -93,7 +93,7 @@ class Card extends Component {
               <InlineSVG src={is_liked ? this.getHeartSvg() : this.getHeartEmptySvg()} />
             </div>
           </div>
-        </div                                 >
+        </div>
       </a>
     );
   }
