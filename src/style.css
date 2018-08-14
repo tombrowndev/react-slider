@@ -16,3 +16,11 @@ p {
 h1.site-title {
   margin-bottom: 26px;
 }
+
+h2.section-title {
+  margin-bottom: 26px;
+  color: #2a8631;
+  border-bottom: 4px solid #2a8631;
+  display: inline-block;
+  padding-right: 26px;
+}

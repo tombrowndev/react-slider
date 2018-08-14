@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 // Import Componenets
 import CardSlider from './components/CardSlider';
+import Card from './components/Card';
 
 // Import styles
 import './style.css';
@@ -54,9 +55,24 @@ class App extends Component {
   render() {
     const { cardData, cardsToShow } = this.state;
 
-      return cardData.length ? (
-        <CardSlider cards={cardData} cardsToShow={cardsToShow} toggleLike={this.toggleLike} />
-      ) : '';
+      return (
+        <React.Fragment>
+          <div>
+            <h2 className="section-title">Slider</h2>
+          {
+            (cardData.length > 0) &&
+            <CardSlider cards={cardData} toggleLike={this.toggleLike} cardsToShow={cardsToShow} />
+          }
+          </div>
+          <div>
+            <h2 className="section-title">Single Card</h2><br />
+          { (cardData.length > 0) &&
+          <Card key={0} data={cardData[0]} handleLike={this.toggleLike} />
+          }
+          </div>
+        </React.Fragment>
+      );
+
 
   }
 }
